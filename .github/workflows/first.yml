@@ -13,18 +13,27 @@ jobs:
     steps:
       - name: Get user id
         run: id 
+      
       - name: check pwd
         run: pwd
+      
       - name: list files
         run: ls -ltr
+      
       - name: run update
         run: sudo apt update
+      
       - name: install jdk
         run: sudo apt install openjdk-11-jdk -y
+      
       - name: install maven
         run: sudo apt install maven -y
+      
       - name: check maven version
-        run: java -version && mvn -version
+        run: | 
+              java -version 
+              mvn -version
+      
       - name: clone vprofile
         run: |
            git clone https://github.com/hkhcoder/vprofile-project.git 
