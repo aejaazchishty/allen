@@ -26,7 +26,12 @@ jobs:
       - name: check maven version
         run: java -version && mvn -version
       - name: clone vprofile
-        run: git clone https://github.com/hkhcoder/vprofile-project.git && cd vprofile-project 
+        run: |
+           git clone https://github.com/hkhcoder/vprofile-project.git 
+           cd vprofile-project
+           mvn install
       - name: build
-        run: mvn install
+        run: |
+               pwd
+               ls -ltr
   
